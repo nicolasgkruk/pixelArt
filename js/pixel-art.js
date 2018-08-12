@@ -66,6 +66,7 @@ var colorSeleccionado = document.getElementById("indicador-de-color");
   grillaPixeles.addEventListener("mouseover", function(event) {
     if (mouseDown) {
       event.target.style.backgroundColor = colorSeleccionado.style.backgroundColor;
+      console.log("event target was:" + event.target);
   }});
 })();
 
@@ -82,24 +83,6 @@ colorPersonalizado.addEventListener('change',
   })
 );
 
-function cargarSuperheroe(superheroe) {
-  var $pixeles = $("#grilla-pixeles div");
-  for (var i = 0; i < superheroe.length; i++) {
-    $pixeles[i].style.backgroundColor = superheroe[i];
-  }
-}
-
-function guardarPixelArt() {
-  html2canvas($("#grilla-pixeles") , {
-    onrendered: function(canvas) {
-      theCanvas = canvas;
-      canvas.toBlob(function(blob) {
-        saveAs(blob, "pixel-art.png");
-      });
-    }
-  });
-}
-
 $(document).ready(function() {
   var $divsGrilla = $("#grilla-pixeles").children("div.pixel");
   $("#borrar").click(function() {
@@ -115,49 +98,3 @@ $(document).ready(function() {
     guardarPixelArt();
   })
 });
-
-/* (function todosLosColores() {
-
-  for (i=0; i < nombreColores.length; i++) {
-    var newChild = document.createElement("div");
-    newChild.style.backgroundColor = nombreColores[i];
-    newChild.classList.add("color-paleta");
-    newChild.addEventListener("click", indicarColor(i));
-    paleta.appendChild(newChild);
-    }
-
-  function indicarColor(i){
-    return function() {
-    colorSeleccionado.style.backgroundColor = nombreColores[i];
-    }
-  };
-  
-})();
-
-(function populateGrid() {
-  for (i=0; i < 1750; i++) {
-    var newChild = document.createElement("div");
-    newChild.classList.add("grilla");
-    newChild.addEventListener("click", indicarColor(i));
-    newChild.addEventListener("mouseover", pintarEnMovimiento(i));
-    grillaPixeles.appendChild(newChild);
-  }
-
-  var arrayGrilla = document.getElementsByClassName("grilla");
-
-  function indicarColor(i) {
-    return function() {
-      var seleccionActual = colorSeleccionado.style.backgroundColor;
-      arrayGrilla[i].style.backgroundColor = seleccionActual;
-    }
-  }
-
-  function pintarEnMovimiento(i) {
-    return function() {
-      if (mouseDown) {
-        var seleccionActual = colorSeleccionado.style.backgroundColor;
-        arrayGrilla[i].style.backgroundColor = seleccionActual;
-      }
-    }
-  }
-})(); */
