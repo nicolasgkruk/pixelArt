@@ -94,8 +94,13 @@ $(document).ready(function() {
   })
   // 4.- función añadida: click en el botón "visión de rayos x" invierte los colores de esos selectores. 
   // Vale aclarar que no funciona al "Guardar", es solo efecto de ponerse unas gafas. La realidad en png
-  // sale en colores "normales" ;)
+  // sale en colores "normales"
   $("#invertir").click(function() {
-    $(".button, #color-personalizado, #indicador-de-color, #grilla-pixeles, .imgs, #paleta").toggleClass("inverted");
+    $(".button, #color-personalizado, .input-color, #grilla-pixeles, .imgs, #paleta").toggleClass("inverted");
+    // por alguna razón la inversión me ponía negro el "pincel", pero no "rueda de colores"
+    // y si ponía en el listener "#indicador-de-color" en vez de ".input-color", entonces nunca 
+    // sacaba la barra inicial que significa "sin color elegido" al iniciar la visión invertida... 
+    // misterios del css.
+    $("#indicador-de-color-mensaje").toggleClass("inverted");
   });
 });
