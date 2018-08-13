@@ -66,7 +66,6 @@ var colorSeleccionado = document.getElementById("indicador-de-color");
   grillaPixeles.addEventListener("mouseover", function(event) {
     if (mouseDown) {
       event.target.style.backgroundColor = colorSeleccionado.style.backgroundColor;
-      console.log("event target was:" + event.target);
   }});
 })();
 
