@@ -99,13 +99,8 @@ $(document).ready(function() {
   })
 
   $("#invertir").click(function() {
-    $(".button").toggleClass("inverted");
-    $("#color-personalizado").toggleClass("inverted");
-    $("#indicador-de-color").toggleClass("inverted");
-    $("#grilla-pixeles").toggleClass("inverted");
-    $(".imgs").toggleClass("inverted");
-    $("#paleta").toggleClass("inverted");
-  });
+    $(".button, #color-personalizado, #indicador-de-color, #grilla-pixeles, .imgs, #paleta").toggleClass("inverted");
+});
 
   
 });
