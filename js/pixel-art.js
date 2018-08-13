@@ -97,4 +97,15 @@ $(document).ready(function() {
   $("#guardar").click(function() {
     guardarPixelArt();
   })
+
+  $("#invertir").click(function() {
+    console.log("entra a la callback");
+    $(".button").toggleClass("inverted");
+    $(".input-color").toggleClass("inverted");
+    $("#grilla-pixeles").toggleClass("inverted");
+    $(".imgs").toggleClass("inverted");
+    $("#paleta").toggleClass("inverted");
+  });
+
+  
 });
