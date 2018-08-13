@@ -92,7 +92,9 @@ $(document).ready(function() {
   $("#guardar").click(function() {
     guardarPixelArt();
   })
-  // 4.- función añadida: click en el botón "visión de rayos x" invierte los colores de esos selectores.
+  // 4.- función añadida: click en el botón "visión de rayos x" invierte los colores de esos selectores. 
+  // Vale aclarar que no funciona al "Guardar", es solo efecto de ponerse unas gafas. La realidad en png
+  // sale en colores "normales" ;)
   $("#invertir").click(function() {
     $(".button, #color-personalizado, #indicador-de-color, #grilla-pixeles, .imgs, #paleta").toggleClass("inverted");
   });
