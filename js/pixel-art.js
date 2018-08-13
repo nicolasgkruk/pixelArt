@@ -99,9 +99,9 @@ $(document).ready(function() {
   })
 
   $("#invertir").click(function() {
-    console.log("entra a la callback");
     $(".button").toggleClass("inverted");
-    $(".input-color").toggleClass("inverted");
+    $("#color-personalizado").toggleClass("inverted");
+    $("#indicador-de-color").toggleClass("inverted");
     $("#grilla-pixeles").toggleClass("inverted");
     $(".imgs").toggleClass("inverted");
     $("#paleta").toggleClass("inverted");
