@@ -97,10 +97,10 @@ $(document).ready(function() {
   // sale en colores "normales"
   $("#invertir").click(function() {
     $(".button, #color-personalizado, .input-color, #grilla-pixeles, .imgs, #paleta").toggleClass("inverted");
-    // por alguna razón la inversión me ponía negro el "pincel", pero no "rueda de colores"
     // y si ponía en el listener "#indicador-de-color" en vez de ".input-color", entonces nunca 
     // sacaba la barra inicial que significa "sin color elegido" al iniciar la visión invertida... 
     // misterios del css.
+    // y por alguna razón la inversión poner ".input-color" me ponía negro el "pincel", pero no "rueda de colores" cuando invertía colores. por eso decidí hardcodearlo.
     $("#indicador-de-color-mensaje").toggleClass("inverted");
   });
 });
